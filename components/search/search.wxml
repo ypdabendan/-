@@ -1,0 +1,7 @@
+<!-- 顶部搜索 -->
+<view class="search">
+    <navigator class="search-in">
+        <icon type="search" size="32rpx"></icon>
+        <text class="search-text">搜索</text>
+    </navigator>
+</view>

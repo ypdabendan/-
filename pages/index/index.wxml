@@ -1,0 +1,48 @@
+<!-- 引入顶部搜索组件 -->
+<Search />
+<!-- 轮播图 -->
+<swiper
+indicator-dots
+indicator-color="rgba(255, 255, 255, .3)"
+indicator-active-color="#fff"
+autoplay
+circular
+interval="2000"
+class="slider"
+>
+    <block wx:for="{{ search }}" wx:key="goods_id">
+        <swiper-item>
+            <image src="{{ item.image_src }}" class="slider-image"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<!-- 分类菜单 -->
+<view class="menu">
+    <block wx:for="{{ menu }}" wx:key="name">
+        <view class="menu-item">
+            <image class="menu-item-img" src="{{item.image_src}}"></image>
+        </view>
+    </block>
+</view>
+<!-- 楼层菜单 -->
+<block wx:for="{{ floor }}" wx:key="">
+<view class="floor_title">
+    <image class="floor_title-img" src="{{ item.floor_title.image_src }}"></image>
+</view>
+<view class="floor-product_list">
+<view class="floor-product_list-left">
+    <image class="floor-product_list-left-img" src="{{ item.product_list[0].image_src }}" 
+    ></image>
+</view>
+<view class="floor-product_list-right">
+    <block wx:for="{{ item.product_list }}" wx:key="image_width">
+        <image class="floor-product_list-right-img" src="{{ item.image_src }}" 
+        wx:if="{{ index > 0 }}"></image>
+    </block>
+</view>
+</view>
+</block>
+<!-- 回到顶部 -->
+<view class="toTop" bindtap="toTop" data-top="{{ 0 }}" hidden="{{ showTop }}">
+<text class="toTop-text">顶部</text>
+</view>

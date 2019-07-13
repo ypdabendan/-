@@ -1,0 +1,18 @@
+/* 顶部搜索框样式 */
+.search{
+  background-color: #eb4450;
+  padding: 24rpx 16rpx;
+}
+.search-in{
+  height: 60rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6rpx;
+}
+.search-text{
+  padding-left: 14rpx;
+  color: #b5b5b4;
+  font-size: 28rpx;
+}
