@@ -1,4 +1,6 @@
-//index.js
+// 引入request 模块
+const {request}=require("../../utils/request.js");
+
 //获取应用实例
 Page({
 
@@ -29,43 +31,34 @@ Page({
   },
   // 请求轮播图数据
   getSliderData(){
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
-      success: res => {
-        // console.log(res);
-        const { message } = res.data;
-        // 绑定轮播图数据
-        this.setData({
-          search: message
-        })
-      }
+    const data = { url:"home/swiperdata"};
+    request(data)
+    .then(res => {
+      // 绑定轮播图数据
+      this.setData({
+        search: res
+      })
     })
   },
   // 请求分类菜单数据
   getMenuData() {
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
-      success: res => {
-        // console.log(res);
-        const {message}=res.data;
+    const data = { url: "home/catitems" };
+    request(data)
+      .then(res => {
         this.setData({
-          menu:message
+          menu: res
         })
-      }
-    })
+      })
   },
   // 请求楼层菜单数据
   getFloorData() {
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
-      success: res => {
-        // console.log(res);
-       const {message}=res.data;
-       this.setData({
-         floor:message
-       })
-      }
-    })
+    const data = { url: "home/floordata" };
+    request(data)
+      .then(res => {
+        this.setData({
+          floor: res
+        })
+      })
   },
   // 点击回到顶部事件
   toTop(e){

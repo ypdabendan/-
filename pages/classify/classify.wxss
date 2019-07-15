@@ -1,1 +1,62 @@
-/* pages/classify/classify.wxss */
+.classify{
+  display: flex;
+  position: absolute;
+  top: 110rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.classify-left{
+  width: 200rpx;
+  flex-shrink: 0;
+}
+.classify-left-item{
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #f4f4f4;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.classify-left-item.active{
+  background-color: #fff;
+  color: #eb4450;
+  position: relative;
+}
+.classify-left-item.active::after{
+  content: "";
+  width: 10rpx;
+  position: absolute;
+  top: 10rpx;
+  bottom: 10rpx;
+  left: 0;
+  background-color: #eb4450;
+}
+.classify-right{
+  flex: 1;
+}
+.classify-right-title{
+  text-align: center;
+  line-height: 120rpx;
+}
+/* 用伪元素的方式加斜杠 */
+.classify-right-title::before, .classify-right-title::after {
+  content: "/";
+  color: #ddd;
+  margin: 0 30rpx;
+}
+.classify-right-list{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.classify-right-item{
+  flex: 1;
+  margin: 20rpx;
+}
+.classify-right-item-img{
+  width: 120rpx;
+  height: 120rpx;
+}
+.classify-right-item-text{
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
